@@ -5,6 +5,10 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
+        <option name="gradleJvm" value="#JAVA_HOME" />
+=======
+>>>>>>> 64082c573a45b1abb763fae10634f0d814da71b3
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />

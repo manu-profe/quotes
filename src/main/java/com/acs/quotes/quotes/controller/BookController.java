@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class LibroController {
-    private final List<Book> libros = new ArrayList<>();
+public class BookController {
+    private final List<Book> books = new ArrayList<>();
 
     @GetMapping("/book{title}")
     public String searchBook(String title) {
-        for (Book book : libros) {
+        for (Book book : books) {
             if (book.getTittle().equals(title)) {
                 return "Libro encontrado: " + book.getTittle() + " - Autor: " + book.getAutorId() + " -Published at: " + book.getDatePublished();
             }
@@ -28,6 +28,7 @@ public class LibroController {
 
     @PostMapping("/book")
     public ResponseEntity<Book> saveBook(@RequestBody Book book){
+        books.add(book);
         return new ResponseEntity<>(book,null, HttpStatus.CREATED);
     }
 

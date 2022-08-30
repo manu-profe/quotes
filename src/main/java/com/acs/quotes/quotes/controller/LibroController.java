@@ -23,13 +23,5 @@ public class LibroController {
         return "Libro no encontrado";
     }
 
-    @PostMapping("/book{title}")
-    public String deleteBook(String title) {
-        for (Book book : libros) {
-            if (book.getTittle().equals(title)) {
-                return "Libro encontrado: " + book.getTittle() + " - Autor: " + book.getAutorId() + " -Published at: " + book.getDatePublished();
-            }
-        }
-        return "Libro no encontrado";
-    }
+
 }

@@ -27,6 +27,6 @@ public class HomeController {
 
     @PutMapping("UpdateLector")
     public String updateLector(){
-        return "";
+        return "h";
     }
 }

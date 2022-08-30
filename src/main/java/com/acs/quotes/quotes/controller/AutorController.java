@@ -14,7 +14,7 @@ public class AutorController {
 
     ArrayList<Autor> autores = new ArrayList<Autor>();
     //Create and Update
-    @GetMapping("/Create{id}")
+    @GetMapping("/Create{id2}")
     public String crearAutor(@RequestBody Autor autor){
 
 

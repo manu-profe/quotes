@@ -1,6 +1,7 @@
 package com.acs.quotes.quotes.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Lector {
     /*
@@ -14,6 +15,19 @@ public class Lector {
     private String gender;
     private String dateBirth;
     private String idLector;
+
+    public List<String> getLector() {
+        return lector;
+    }
+
+    private final List<String> lector = new ArrayList<>();
+
+    public void add_item(){
+        lector.add(2,"andres");
+        lector.add(5,"juan");
+        lector.add(3,"mateo");
+        lector.add(4,"Valeria");
+    }
 
     public String getName() {
         return name;

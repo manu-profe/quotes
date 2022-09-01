@@ -1,13 +1,11 @@
 package com.acs.quotes.quotes.controller;
 
 import com.acs.quotes.quotes.model.Autor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AutorController {
 
@@ -25,5 +23,24 @@ public class AutorController {
     @PutMapping("/update/{id}")
     public String updateAutor(@RequestBody Autor autor, @PathVariable("idAutor") int idAutor) {
         return "";
+    }
+
+    @GetMapping("/Author")
+    public List<Author> getAuthor() {
+
+        ArrayList<Author> list = new ArrayList<Author>();
+        Author first = new Author();
+        first.setAuthorId("1");
+        first.setFirstName("Gabriel");
+        first.setLastName("marquez");
+        first.setNationality("colombia");
+
+        list.add(first);
+        return list;
+    }
+
+    @DeleteMapping("/Author/{authorId}")
+    public String DeleteAuthor(@PathVariable("authorId") String AuthorId) {
+        return "Delete by author id called";
     }
 }

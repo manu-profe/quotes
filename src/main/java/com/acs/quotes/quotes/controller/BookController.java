@@ -28,6 +28,11 @@ public class BookController {
 
     @PostMapping("/book")
     public ResponseEntity<Book> saveBook(@RequestBody Book book){
+        for (Book bookEntity : books) {
+            if(bookEntity.getTittle().equals(book.getTittle())){
+                return new ResponseEntity<>(book,null, HttpStatus.BAD_REQUEST);
+            }
+        }
         String id = Integer.toString(books.size() + 1);
         book.setId(id);
         books.add(book);

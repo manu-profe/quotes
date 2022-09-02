@@ -1,11 +1,37 @@
 package com.acs.quotes.quotes.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 public class Reader {
     private String name;
     private String lastName;
     private String gender;
     private String birth;
     private String documentId;
+    //Test team5
+
+    public Reader(String name, String lastName,String gender,String birth, String documentId){
+      this.name = name;
+      this.lastName = lastName;
+      this.gender = gender;
+      this.birth = birth;
+      this.documentId = documentId;
+    }
+
+
+
+    public List<Reader> getRd(){return Reader;}
+
+    //Reader reader = new Reader();
+    private final List<Reader> Reader = new ArrayList<>();
+
+    public void add_reader(){
+        Reader.add(new Reader(name,lastName,gender,birth,documentId));
+    }
+
+
 
     public String getName() {
         return name;

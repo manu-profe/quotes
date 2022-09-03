@@ -1,34 +1,42 @@
 package com.acs.quotes.quotes.controller;
 
-import com.acs.quotes.quotes.model.Autor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.acs.quotes.quotes.model.Author;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RestController
 public class AutorController {
 
     // Equipo 7
     //Create and Update
-    @GetMapping("/Create")
-    public List<Autor> getAutor(){
-        List<Autor> lista = new ArrayList<Autor>();
-        lista.add(new Autor(1,"camilo", "villa", "col"));
-        lista.add(new Autor(2,"maria paulina", "valencia", "italy"));
-        lista.add(new Autor(3,"juan esteban", "yepes", "esp"));
+    @GetMapping("/Author")
+    public List<Author> getAuthor() {
 
-        return lista;
+        ArrayList<Author> list = new ArrayList<Author>();
+        Author first = new Author();
+        first.setAuthorId(1);
+        first.setAuthorFirstname("Gabriel");
+        first.setAuthorLastname("marquez");
+        first.setAuthorNationality("colombia");
 
+        list.add(first);
+        return list;
     }
 
     // Equipo 7
     //Update
     @PutMapping("/update/{id}")
-    public String updateAutor(@RequestBody Autor autor, @PathVariable("idAutor") int idAutor) {
+    public String updateAutor(@RequestBody Author autor, @PathVariable("idAutor") int idAutor) {
         return "";
+    }
+
+    // Equuipo 6
+    //complete
+    @DeleteMapping("/Author/{AuthorId}")
+    public String DeleteAuthor(@PathVariable("AuthorId") String AuthorId) {
+        return "Delete by author id called";
     }
 }
 

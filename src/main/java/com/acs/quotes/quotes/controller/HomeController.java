@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class HomeController {
-    List<Quote> quotesArray = new ArrayList<>();
+    private final List<Quote> quotesArray = new ArrayList<>();
     @PostMapping("/quote")
     public String createQuote(@RequestBody Quote quote){
         // primero validacion de que lector exista
@@ -28,9 +29,23 @@ public class HomeController {
     }
 
     @GetMapping("quote")
-    public String getQuote(@RequestParam(name = "author", required = false) String quoteToSearch,
+    public List<Quote> getQuote(@RequestParam(name = "author", required = false) String authorToSearch,
                            @RequestParam(name = "keyWord", required = false) String wordToSearch,
-                           @RequestParam(name = "date", required = false) String dateToSearch){
-        return "";
+                           @RequestParam(name = "book", required = false) String bookToSearch){
+
+        if (authorToSearch == null){
+            authorToSearch = "";
+        }
+        if (wordToSearch == null){
+            wordToSearch = "";
+        }
+        if (bookToSearch == null){
+            bookToSearch = "";
+        }
+
+        return quotesArray.stream()
+                .filter(x -> x.getPhrase().contains(wordToSearch) || x.getAuthor().contains(authorToSearch) || x.getBook().contains(bookToSearch)).collect(Collectors.toList());
     }
+
+
 }

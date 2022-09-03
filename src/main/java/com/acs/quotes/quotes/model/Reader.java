@@ -46,4 +46,17 @@ public class Reader {
     public void setDocumentId(String documentId) {
         this.documentId = documentId;
     }
+
+    public Reader(String name, String lastName, String gender, String birth, String documentId) {
+        this.name = name;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.birth = birth;
+        this.documentId = documentId;
+    }
+
+    @Override
+    public String toString(){
+        return "Document ID: " + documentId + " Name: " + name + " Last Name:  " + lastName + " Gender:" + gender + " Birth day: " + birth;
+    }
 }

@@ -52,7 +52,7 @@ public class BookController {
 
         for (Book bookEntity : books) {
             if (bookEntity.getTittle().equals(book.getTittle())) {
-                bookEntity.setId(book.getId());
+                bookEntity.setId(bookEntity.getId());
                 bookEntity.setAutorId(book.getAutorId());
                 bookEntity.setTittle(book.getTittle());
                 bookEntity.setDatePublished(book.getPublishing());
@@ -60,7 +60,7 @@ public class BookController {
 
                 responseEntity.setMessage("Actualizado exitosamente");
                 responseEntity.setStatus(true);
-                responseEntity.setData(book);
+                responseEntity.setData(bookEntity);
 
                 return new ResponseEntity<>(responseEntity, null, HttpStatus.OK);
             }

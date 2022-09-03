@@ -14,7 +14,6 @@ import java.util.List;
 public class BookController {
     private final List<Book> books = new ArrayList<>();
 
-
     @GetMapping("/book{title}")
     public String searchBook(String title) {
         for (Book book : books) {
@@ -23,6 +22,18 @@ public class BookController {
             }
         }
         return "Libro no encontrado";
+    }
+
+    //Eliminar libro
+    @DeleteMapping("/delete/{title}")
+    public String deleteBook(String title) {
+        for (Book book : books) {
+            if (book.getTittle().equals(title)) {
+                books.remove(book);
+                return "Book deleted";
+            }
+        }
+        return "Book not founded";
     }
 
     @PostMapping("/book")

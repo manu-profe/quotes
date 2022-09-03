@@ -30,7 +30,7 @@ public class BookController {
         var responseEntity = new Response<Book>();
         for (Book bookEntity : books) {
             if (bookEntity.getTittle().equals(book.getTittle())) {
-                responseEntity.setMessage("Libro no encontrado.");
+                responseEntity.setMessage("El libro ya existe.");
                 responseEntity.setStatus(false);
                 return new ResponseEntity<>(responseEntity, null, HttpStatus.BAD_REQUEST);
             }

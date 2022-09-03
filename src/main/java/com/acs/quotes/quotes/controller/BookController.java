@@ -25,7 +25,7 @@ public class BookController {
     }
 
     //Eliminar libro
-    @DeleteMapping("/delete/{title}")
+    @DeleteMapping("/delete{title}")
     public String deleteBook(String title) {
         for (Book book : books) {
             if (book.getTittle().equals(title)) {

@@ -8,6 +8,34 @@ public class Quote {
     private LocalDateTime creationDate;
     private LocalDateTime updatedDate;
     private String keyWord;
+    private String author;
+    private String book;
+    private String reader;
+    public String getReader() {
+        return reader;
+    }
+
+    public void setReader(String reader) {
+        this.reader = reader;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getBook() {
+        return book;
+    }
+
+    public void setBook(String book) {
+        this.book = book;
+    }
+
+
 
     public String getPhrase() {
         return phrase;

@@ -1,6 +1,5 @@
 package com.acs.quotes.quotes.model.genericModel;
 
-import org.springframework.beans.factory.ObjectFactory;
 
 public class Response<T> {
 

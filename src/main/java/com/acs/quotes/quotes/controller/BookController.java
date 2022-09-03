@@ -14,15 +14,26 @@ import java.util.List;
 public class BookController {
     private final List<Book> books = new ArrayList<>();
 
-
     @GetMapping("/book{title}")
     public String searchBook(String title) {
         for (Book book : books) {
             if (book.getTittle().equals(title)) {
-                return "Libro encontrado: " + book.getTittle() + " - Autor: " + book.getAutorId() + " -Published at: " + book.getDatePublished();
+                return "Book tittle: " + book.getTittle();
             }
         }
-        return "Libro no encontrado";
+        return "Book founded";
+    }
+
+    //Eliminar libro
+    @DeleteMapping("/delete/{title}")
+    public String deleteBook(String title) {
+        for (Book book : books) {
+            if (book.getTittle().equals(title)) {
+                books.remove(book);
+                return "Book deleted";
+            }
+        }
+        return "Book not founded";
     }
 
     @PostMapping("/book")

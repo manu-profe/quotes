@@ -4,13 +4,23 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Quote {
+    private int quoteId;
     private String phrase;
     private LocalDateTime creationDate;
     private LocalDateTime updatedDate;
-    private String keyWord;
+    //private String keyWord;
     private String author;
     private String book;
     private String reader;
+
+    public int getQuoteId() {
+        return quoteId;
+    }
+
+    public void setQuoteId(int quoteId) {
+        this.quoteId = quoteId;
+    }
+
     public String getReader() {
         return reader;
     }
@@ -61,13 +71,13 @@ public class Quote {
         this.updatedDate = updatedDate;
     }
 
-    public String getKeyWord() {
+    /*public String getKeyWord() {
         return keyWord;
-    }
+    }*/
 
-    public void setKeyWord(String keyWord) {
+    /*public void setKeyWord(String keyWord) {
         this.keyWord = keyWord;
-    }
+    }*/
 
 
 

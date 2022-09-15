@@ -11,7 +11,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class QuoteServiceImp implements QuoteService {
-    private static final List<Quote> quotes = new ArrayList<>();
+    private static List<Quote> quotes = new ArrayList<>();
+
+    public QuoteServiceImp(List<Quote> quotesInjected) {
+        quotes = quotesInjected;
+    }
 
     public List<Quote> get() {
         return quotes;
